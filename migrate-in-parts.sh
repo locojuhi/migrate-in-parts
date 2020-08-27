@@ -22,7 +22,7 @@ do
 	esac
 done
 
-if [ -z "$directory" ] && [ -z "$databaseHost" ] && [ -z "$databaseUser" ] && [ -z "$databasePass" ] [ -z "$databaseName" ];
+if [ -z "$directory" ] && [ -z "$databaseHost" ] && [ -z "$databaseUser" ] && [ -z "$databasePass" ] && [ -z "$databaseName" ];
 then
 	echo "All params are needed"
 	exit 0
