@@ -18,14 +18,15 @@ do
 		h) databaseHost=${OPTARG};;
 		u) databaseUser=${OPTARG};;
 		p) databasePass=${OPTARG};;
+		n) databaseName=${OPTARG};;
 	esac
 done
 
-if [ -z "$directory" ] && [ -z "$databaseHost" ] && [ -z "$databaseUser" ] && [ -z "$databasePass" ];
+if [ -z "$directory" ] && [ -z "$databaseHost" ] && [ -z "$databaseUser" ] && [ -z "$databasePass" ] [ -z "$databaseName" ];
 then
 	echo "All params are needed"
 	exit 0
 fi
 for filename in ${directory}/*.sql; do
-	mysql -h ${databaseHost} -u ${databaseUser} -p${databasePass} --binary-mode=1 < ${filename}
+	mysql -h ${databaseHost} -u ${databaseUser} -p${databasePass} --binary-mode=1 ${databaseName} < ${filename}
 done
