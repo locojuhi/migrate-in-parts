@@ -28,5 +28,5 @@ then
 	exit 0
 fi
 for filename in ${directory}/*.sql; do
-	mysql -h ${databaseHost} -u ${databaseUser} -p${databasePass} --binary-mode=1 ${databaseName} < ${filename}
+	mysql -h ${databaseHost} -u ${databaseUser} -p${databasePass} --binary-mode=1 --database=${databaseName} < ${filename}
 done
